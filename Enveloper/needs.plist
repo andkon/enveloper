@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Auto and Transport</key>
+	<array>
+		<string>Helicopter and yacht fees</string>
+		<string>Car payment</string>
+		<string>Car insurance</string>
+		<string>Gas</string>
+		<string>Public transit</string>
+	</array>
+	<key>Bills and Utilities</key>
+	<array>
+		<string>Internet (you don&apos;t need cable)</string>
+		<string>Phone</string>
+		<string>Heating, water, &amp; power</string>
+	</array>
+	<key>Business Costs</key>
+	<array>
+		<string>Office space</string>
+		<string>Legal fees (ugh)</string>
+		<string>Misc. biz expenses</string>
+	</array>
+	<key>Education</key>
+	<array>
+		<string>Tuition</string>
+	</array>
+	<key>Banking &amp; Financial</key>
+	<array>
+		<string>Loan payments</string>
+		<string>Credit card payments</string>
+		<string>Bank fees</string>
+	</array>
+	<key>Food</key>
+	<array>
+		<string>Groceries</string>
+	</array>
+	<key>Health and Fitness</key>
+	<array>
+		<string>Health insurance</string>
+		<string>Gym</string>
+	</array>
+	<key>Home</key>
+	<array>
+		<string>Mortgage/rent</string>
+		<string>Insurance</string>
+		<string>Repairs</string>
+	</array>
+	<key>Kids</key>
+	<array>
+		<string>Child support</string>
+		<string>Daycare</string>
+		<string>Baby supplies 💩</string>
+	</array>
+	<key>Misc. Expenses</key>
+	<array>
+		<string>Fuck knows</string>
+	</array>
+	<key>Pets</key>
+	<array>
+		<string>Food</string>
+		<string>Veterinary</string>
+	</array>
+	<key>Taxes</key>
+	<array>
+		<string>Federal tax</string>
+		<string>Provincial/state tax</string>
+	</array>
+	<key>Emergency Travel</key>
+	<array>
+		<string>Hotel</string>
+		<string>Airfare</string>
+	</array>
+</dict>
+</plist>

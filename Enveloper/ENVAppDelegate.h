@@ -10,6 +10,9 @@
 
 @interface ENVAppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) NSMutableDictionary *financialDict;
 @property (strong, nonatomic) UIWindow *window;
+
+-(NSString *)filePath;
 
 @end

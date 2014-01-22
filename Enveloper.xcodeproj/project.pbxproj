@@ -14,13 +14,22 @@
 		5214665618776EFC004C5CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5214665518776EFC004C5CFF /* main.m */; };
 		5214665A18776EFC004C5CFF /* ENVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5214665918776EFC004C5CFF /* ENVAppDelegate.m */; };
 		5214665D18776EFC004C5CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5214665B18776EFC004C5CFF /* Main.storyboard */; };
-		5214666018776EFC004C5CFF /* ENVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5214665F18776EFC004C5CFF /* ENVViewController.m */; };
 		5214666218776EFC004C5CFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5214666118776EFC004C5CFF /* Images.xcassets */; };
 		5214666918776EFC004C5CFF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5214666818776EFC004C5CFF /* XCTest.framework */; };
 		5214666A18776EFC004C5CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5214664918776EFB004C5CFF /* Foundation.framework */; };
 		5214666B18776EFC004C5CFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5214664D18776EFB004C5CFF /* UIKit.framework */; };
 		5214667318776EFC004C5CFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5214667118776EFC004C5CFF /* InfoPlist.strings */; };
 		5214667518776EFC004C5CFF /* EnveloperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5214667418776EFC004C5CFF /* EnveloperTests.m */; };
+		523B5A4F18777C8C00CDF27D /* ENVIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A4E18777C8C00CDF27D /* ENVIncomeViewController.m */; };
+		523B5A5218777C9D00CDF27D /* ENVNeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A5118777C9D00CDF27D /* ENVNeedsViewController.m */; };
+		523B5A5518777CA900CDF27D /* ENVWantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A5418777CA900CDF27D /* ENVWantsViewController.m */; };
+		523B5A5818777CBC00CDF27D /* ENVRecurringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A5718777CBC00CDF27D /* ENVRecurringViewController.m */; };
+		523B5A5C18777CD500CDF27D /* ENVBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A5A18777CD500CDF27D /* ENVBudgetViewController.m */; };
+		523B5A5D18777CD500CDF27D /* ENVBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523B5A5B18777CD500CDF27D /* ENVBudgetViewController.xib */; };
+		523B5A6018777D0C00CDF27D /* ENVNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B5A5F18777D0C00CDF27D /* ENVNavViewController.m */; };
+		523B5A631878B2A900CDF27D /* needs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523B5A621878B2A900CDF27D /* needs.plist */; };
+		523B5A651878B2B100CDF27D /* wants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523B5A641878B2B100CDF27D /* wants.plist */; };
+		52DE8863188F892C00FE2E0A /* ENVNeedsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DE8862188F892C00FE2E0A /* ENVNeedsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +54,29 @@
 		5214665818776EFC004C5CFF /* ENVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENVAppDelegate.h; sourceTree = "<group>"; };
 		5214665918776EFC004C5CFF /* ENVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ENVAppDelegate.m; sourceTree = "<group>"; };
 		5214665C18776EFC004C5CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5214665E18776EFC004C5CFF /* ENVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENVViewController.h; sourceTree = "<group>"; };
-		5214665F18776EFC004C5CFF /* ENVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ENVViewController.m; sourceTree = "<group>"; };
 		5214666118776EFC004C5CFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5214666718776EFC004C5CFF /* EnveloperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnveloperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5214666818776EFC004C5CFF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5214667018776EFC004C5CFF /* EnveloperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnveloperTests-Info.plist"; sourceTree = "<group>"; };
 		5214667218776EFC004C5CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5214667418776EFC004C5CFF /* EnveloperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnveloperTests.m; sourceTree = "<group>"; };
+		523B5A4D18777C8C00CDF27D /* ENVIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVIncomeViewController.h; sourceTree = "<group>"; };
+		523B5A4E18777C8C00CDF27D /* ENVIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVIncomeViewController.m; sourceTree = "<group>"; };
+		523B5A5018777C9D00CDF27D /* ENVNeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVNeedsViewController.h; sourceTree = "<group>"; };
+		523B5A5118777C9D00CDF27D /* ENVNeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVNeedsViewController.m; sourceTree = "<group>"; };
+		523B5A5318777CA900CDF27D /* ENVWantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVWantsViewController.h; sourceTree = "<group>"; };
+		523B5A5418777CA900CDF27D /* ENVWantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVWantsViewController.m; sourceTree = "<group>"; };
+		523B5A5618777CBC00CDF27D /* ENVRecurringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVRecurringViewController.h; sourceTree = "<group>"; };
+		523B5A5718777CBC00CDF27D /* ENVRecurringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVRecurringViewController.m; sourceTree = "<group>"; };
+		523B5A5918777CD500CDF27D /* ENVBudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVBudgetViewController.h; sourceTree = "<group>"; };
+		523B5A5A18777CD500CDF27D /* ENVBudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVBudgetViewController.m; sourceTree = "<group>"; };
+		523B5A5B18777CD500CDF27D /* ENVBudgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ENVBudgetViewController.xib; sourceTree = "<group>"; };
+		523B5A5E18777D0C00CDF27D /* ENVNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVNavViewController.h; sourceTree = "<group>"; };
+		523B5A5F18777D0C00CDF27D /* ENVNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVNavViewController.m; sourceTree = "<group>"; };
+		523B5A621878B2A900CDF27D /* needs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = needs.plist; sourceTree = "<group>"; };
+		523B5A641878B2B100CDF27D /* wants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wants.plist; sourceTree = "<group>"; };
+		52DE8861188F892C00FE2E0A /* ENVNeedsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENVNeedsCell.h; sourceTree = "<group>"; };
+		52DE8862188F892C00FE2E0A /* ENVNeedsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENVNeedsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +138,24 @@
 			children = (
 				5214665818776EFC004C5CFF /* ENVAppDelegate.h */,
 				5214665918776EFC004C5CFF /* ENVAppDelegate.m */,
+				523B5A621878B2A900CDF27D /* needs.plist */,
+				523B5A641878B2B100CDF27D /* wants.plist */,
 				5214665B18776EFC004C5CFF /* Main.storyboard */,
-				5214665E18776EFC004C5CFF /* ENVViewController.h */,
-				5214665F18776EFC004C5CFF /* ENVViewController.m */,
+				523B5A5E18777D0C00CDF27D /* ENVNavViewController.h */,
+				523B5A5F18777D0C00CDF27D /* ENVNavViewController.m */,
+				523B5A4D18777C8C00CDF27D /* ENVIncomeViewController.h */,
+				523B5A4E18777C8C00CDF27D /* ENVIncomeViewController.m */,
+				523B5A5018777C9D00CDF27D /* ENVNeedsViewController.h */,
+				523B5A5118777C9D00CDF27D /* ENVNeedsViewController.m */,
+				52DE8861188F892C00FE2E0A /* ENVNeedsCell.h */,
+				52DE8862188F892C00FE2E0A /* ENVNeedsCell.m */,
+				523B5A5318777CA900CDF27D /* ENVWantsViewController.h */,
+				523B5A5418777CA900CDF27D /* ENVWantsViewController.m */,
+				523B5A5618777CBC00CDF27D /* ENVRecurringViewController.h */,
+				523B5A5718777CBC00CDF27D /* ENVRecurringViewController.m */,
+				523B5A5918777CD500CDF27D /* ENVBudgetViewController.h */,
+				523B5A5A18777CD500CDF27D /* ENVBudgetViewController.m */,
+				523B5A5B18777CD500CDF27D /* ENVBudgetViewController.xib */,
 				5214666118776EFC004C5CFF /* Images.xcassets */,
 				5214665018776EFC004C5CFF /* Supporting Files */,
 			);
@@ -229,9 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523B5A651878B2B100CDF27D /* wants.plist in Resources */,
 				5214666218776EFC004C5CFF /* Images.xcassets in Resources */,
+				523B5A631878B2A900CDF27D /* needs.plist in Resources */,
 				5214665418776EFC004C5CFF /* InfoPlist.strings in Resources */,
 				5214665D18776EFC004C5CFF /* Main.storyboard in Resources */,
+				523B5A5D18777CD500CDF27D /* ENVBudgetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5214666018776EFC004C5CFF /* ENVViewController.m in Sources */,
+				52DE8863188F892C00FE2E0A /* ENVNeedsCell.m in Sources */,
+				523B5A4F18777C8C00CDF27D /* ENVIncomeViewController.m in Sources */,
+				523B5A5C18777CD500CDF27D /* ENVBudgetViewController.m in Sources */,
+				523B5A5518777CA900CDF27D /* ENVWantsViewController.m in Sources */,
 				5214665A18776EFC004C5CFF /* ENVAppDelegate.m in Sources */,
+				523B5A5218777C9D00CDF27D /* ENVNeedsViewController.m in Sources */,
+				523B5A5818777CBC00CDF27D /* ENVRecurringViewController.m in Sources */,
+				523B5A6018777D0C00CDF27D /* ENVNavViewController.m in Sources */,
 				5214665618776EFC004C5CFF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +509,7 @@
 				5214667A18776EFC004C5CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5214667B18776EFC004C5CFF /* Build configuration list for PBXNativeTarget "EnveloperTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +518,7 @@
 				5214667D18776EFC004C5CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

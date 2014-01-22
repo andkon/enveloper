@@ -8,12 +8,51 @@
 
 #import "ENVAppDelegate.h"
 
+static ENVAppDelegate *launchedDelegate;
+
 @implementation ENVAppDelegate
+
+- (NSString *)filePath
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"data.archive"];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // This is where you decode the data you store, if it's been made.
+    
+    launchedDelegate = self;
+    self.financialDict = [[NSMutableDictionary alloc] init];
+    
+    NSString *filePath = [self filePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSData *data = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        self.financialDict = [unarchiver decodeObjectForKey:@"financialDict"];
+    } else {
+        NSArray *keys = [[NSArray alloc] initWithObjects:@"income", @"needs", @"wants", nil];
+        NSArray *values = [[NSArray alloc] initWithObjects:@{}, @{}, @{}, nil];
+        self.financialDict = [[[NSDictionary alloc] initWithObjects:values forKeys:keys] mutableCopy];
+    }
     return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    // This is where you encode the data you store.
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:self.financialDict forKey:@"financialDict"];
+    [archiver finishEncoding];
+    NSError *error = nil;
+    NSString *filePath = [self filePath];
+    BOOL success = [data writeToFile:filePath options:NSDataWritingAtomic error: &error];
+    if (!success) {
+        NSLog(@"writeToFile failed with error %@", error);
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -22,11 +61,6 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {

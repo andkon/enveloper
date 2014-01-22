@@ -1,5 +1,5 @@
 //
-//  ENVViewController.h
+//  ENVRecurringViewController.h
 //  Enveloper
 //
 //  Created by AK on 1/3/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ENVViewController : UIViewController
+@interface ENVRecurringViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
