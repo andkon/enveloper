@@ -10,9 +10,7 @@
 #import "ENVNavViewController.h"
 #import "ENVAppDelegate.h"
 
-@interface ENVNeedsViewController ()
-
-@end
+static ENVAppDelegate *launchedDelegate;
 
 @implementation ENVNeedsViewController
 
@@ -31,8 +29,8 @@
     [super viewDidLoad];
     
     
+    launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (self.financialDict == nil) {
-        ENVAppDelegate *launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.financialDict = launchedDelegate.financialDict;
     }
     
@@ -147,6 +145,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     if ([destination respondsToSelector:@selector(setFinancialDict:)]) {
         [destination setValue:self.financialDict forKey:@"financialDict"];
     }
+    launchedDelegate.financialDict = self.financialDict;
 }
 
 

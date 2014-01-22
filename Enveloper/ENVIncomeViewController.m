@@ -9,6 +9,8 @@
 #import "ENVIncomeViewController.h"
 #import "ENVAppDelegate.h"
 
+static ENVAppDelegate *launchedDelegate;
+
 @implementation ENVIncomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -24,8 +26,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (self.financialDict == nil) {
-        ENVAppDelegate *launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.financialDict = launchedDelegate.financialDict;
     }
 }
@@ -39,7 +41,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSNumber *incomeAmount = [[NSNumber alloc] initWithInt:[self.income.text intValue]];
-    [self.financialDict setValue:incomeAmount forKey:@"income"];
+    [self.financialDict setObject:incomeAmount forKey:@"income"];
     
     UIViewController *destination = segue.destinationViewController;
     if ([destination respondsToSelector:@selector(setDelegate:)]) {
@@ -48,6 +50,7 @@
     if ([destination respondsToSelector:@selector(setFinancialDict:)]) {
         [destination setValue:self.financialDict forKey:@"financialDict"];
     }
+    launchedDelegate.financialDict = self.financialDict;
 }
 
 @end

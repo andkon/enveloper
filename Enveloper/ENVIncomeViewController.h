@@ -11,6 +11,6 @@
 @interface ENVIncomeViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *income;
-@property (copy, nonatomic) NSMutableDictionary *financialDict;
+@property (strong, nonatomic) NSMutableDictionary *financialDict;
 
 @end

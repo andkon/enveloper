@@ -7,10 +7,9 @@
 //
 
 #import "ENVWantsViewController.h"
+#import "ENVAppDelegate.h"
 
-@interface ENVWantsViewController ()
-
-@end
+static ENVAppDelegate *launchedDelegate;
 
 @implementation ENVWantsViewController
 
@@ -26,6 +25,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (self.financialDict == nil) {
+        self.financialDict = launchedDelegate.financialDict;
+    }
+    
     self.wantsItems = [[NSMutableArray alloc] initWithArray:@[
                                                              @{@"Rent/mortgage" : @" "},
                                                              @{@"Groceries" : @" "},

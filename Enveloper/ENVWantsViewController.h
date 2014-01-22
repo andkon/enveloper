@@ -29,6 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *wantText;
 @property (strong, nonatomic) NSMutableArray *wantsItems;
 @property (strong, nonatomic) NSArray *sectionTitles; // For the section titles.
-@property (copy, nonatomic) NSMutableDictionary *financialDict;
+@property (strong, nonatomic) NSMutableDictionary *financialDict;
 
 @end

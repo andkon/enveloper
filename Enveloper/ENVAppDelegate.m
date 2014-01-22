@@ -33,7 +33,7 @@ static ENVAppDelegate *launchedDelegate;
         self.financialDict = [unarchiver decodeObjectForKey:@"financialDict"];
     } else {
         NSArray *keys = [[NSArray alloc] initWithObjects:@"income", @"needs", @"wants", nil];
-        NSArray *values = [[NSArray alloc] initWithObjects:@{}, @{}, @{}, nil];
+        NSArray *values = [[NSArray alloc] initWithObjects:@0, @{}, @{}, nil];
         self.financialDict = [[[NSDictionary alloc] initWithObjects:values forKeys:keys] mutableCopy];
     }
     return YES;

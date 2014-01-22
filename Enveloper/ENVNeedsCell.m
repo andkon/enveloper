@@ -28,6 +28,8 @@
 }
 
 - (IBAction)needAmountFinishedEditing:(id)sender {
-    NSLog(@"%s", self.superview.class);
+    NSLog(@"Finished editing %@", [sender description]);
+    NSNumber *needAmountNumber = [[NSNumber alloc] initWithInt:[self.needAmount.text intValue]];
+    
 }
 @end
