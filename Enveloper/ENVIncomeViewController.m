@@ -38,6 +38,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSNumber *incomeAmount = [[NSNumber alloc] initWithInt:[self.income.text intValue]];
+    [self.financialDict setValue:incomeAmount forKey:@"income"];
+    
     UIViewController *destination = segue.destinationViewController;
     if ([destination respondsToSelector:@selector(setDelegate:)]) {
         [destination setValue:destination forKey:@"delegate"];
