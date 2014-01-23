@@ -27,9 +27,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)needAmountFinishedEditing:(id)sender {
-    NSLog(@"Finished editing %@", [sender description]);
-    NSNumber *needAmountNumber = [[NSNumber alloc] initWithInt:[self.needAmount.text intValue]];
-    
-}
 @end

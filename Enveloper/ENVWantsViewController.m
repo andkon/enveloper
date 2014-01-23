@@ -85,11 +85,7 @@ static ENVAppDelegate *launchedDelegate;
 - (NSIndexPath *)tableView:(UITableView *)tableView
   willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        return nil;
-    } else {
-        return indexPath;
-    }
+    return indexPath;
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -100,8 +96,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+    } else if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     

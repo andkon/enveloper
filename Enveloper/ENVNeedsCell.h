@@ -10,8 +10,7 @@
 
 @interface ENVNeedsCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UITextField *needAmount;
-
-- (IBAction)needAmountFinishedEditing:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *needAmount;
+@property (strong, nonatomic) IBOutlet UILabel *needTitle;
 
 @end

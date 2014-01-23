@@ -80,9 +80,6 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                            <connections>
-                                                <action selector="needAmountFinishedEditing:" destination="cme-hK-m8X" eventType="editingDidEnd" id="Btv-a3-gYR"/>
-                                            </connections>
                                         </textField>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWd-OJ-1xL">
                                             <rect key="frame" x="20" y="11" width="184" height="21"/>
@@ -94,6 +91,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="needAmount" destination="4sh-NQ-LVp" id="dNg-Iq-X55"/>
+                                    <outlet property="needTitle" destination="OWd-OJ-1xL" id="2NU-cr-RdO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -30,6 +30,8 @@ static ENVAppDelegate *launchedDelegate;
     if (self.financialDict == nil) {
         self.financialDict = launchedDelegate.financialDict;
     }
+    NSString *savedIncome = [[self.financialDict valueForKey:@"income"] stringValue];
+    self.income.text = savedIncome;
 }
 
 - (void)didReceiveMemoryWarning

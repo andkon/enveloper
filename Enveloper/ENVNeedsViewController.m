@@ -9,6 +9,7 @@
 #import "ENVNeedsViewController.h"
 #import "ENVNavViewController.h"
 #import "ENVAppDelegate.h"
+#import "ENVNeedsCell.h"
 
 static ENVAppDelegate *launchedDelegate;
 
@@ -28,12 +29,14 @@ static ENVAppDelegate *launchedDelegate;
     
     [super viewDidLoad];
     
-    
+    // See if we've saved a financialDict already
     launchedDelegate = (ENVAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (self.financialDict == nil) {
         self.financialDict = launchedDelegate.financialDict;
     }
     
+    
+    // Get the titles and section titles for the cells
     self.needCellTitles = [[NSMutableArray alloc] initWithCapacity:0];
     self.needSectionTitles = [[NSArray alloc] initWithObjects:@"Auto and Transport", @"Bills and Utilities", @"Business Costs", @"Education", @"Banking & Financial", @"Food", @"Health and Fitness", @"Home", @"Kids", @"Misc. Expenses", @"Pets", @"Taxes", @"Emergency Travel", nil];
     
@@ -45,6 +48,16 @@ static ENVAppDelegate *launchedDelegate;
     for (id object in self.needSectionTitles) {
         NSArray *needsFromSingleCategory = [self.needsAndCategories valueForKey:object];
         [self.needCellTitles addObject:needsFromSingleCategory];
+    }
+    
+    // With cell arrays and so on already made, now I need to
+    // initialize the array which will contain the need values for each cell,
+    // and which will be saved back into launchedDelegate.financialDict at the end
+    // of this file.
+    if ([self.financialDict valueForKey:@"needs"] == nil) {
+            self.needsDict = [[NSMutableDictionary alloc] init];
+    } else {
+        self.needsDict = [[NSMutableDictionary alloc] initWithDictionary:self.financialDict[@"needs"]];
     }
     
     
@@ -83,39 +96,46 @@ static ENVAppDelegate *launchedDelegate;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Create a cell & register it for dequeing
     static NSString *CellIdentifier = @"NeedCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
-    UILabel *needTitle = (UILabel *)[cell viewWithTag:100];
+    ENVNeedsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Get an array of cell names for a given section
     NSArray *titlesForSection = self.needCellTitles[indexPath.section];
-    needTitle.text = titlesForSection[indexPath.row];
+
+    // Set the title of the cell.
+    cell.needTitle.text = titlesForSection[indexPath.row];
     
-    UITextField *needAmount = (UITextField *)[cell viewWithTag:101];
-    NSDictionary *wants = [self.financialDict valueForKey:@"wants"];
     
-    if ([wants valueForKey:needTitle.text] != nil) {
-        needAmount.text = [[wants valueForKey:needTitle.text] stringValue];
+    // Setting the cell's needAmount property
+    // 1. Set the delegate to be this view controller
+    // 2. Find out if there's a key in the self.needsDict. If not, set it to zero.
+    cell.needAmount.delegate = self;
+    
+    NSString *key = cell.needTitle.text;
+    
+    if ([self.needsDict valueForKey:key] != nil) {
+        cell.needAmount.text = [[self.needsDict valueForKey:cell.needTitle.text] stringValue];
     } else {
-        needAmount.text = @"0";
+        cell.needAmount.text = @"0";
     }
 
     return cell;
 }
 
+#pragma mark Text Field Delegate Methods
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+    UILabel *needTitle = (UILabel *)[textField.superview viewWithTag:100];
+    NSString *needName = needTitle.text;
+    NSNumber *needValue = [[NSNumber alloc] initWithInt:[textField.text intValue]];
+    [self.needsDict setObject:needValue forKey:needName];
+}
 
 #pragma mark -
 #pragma mark Table View Delegate Methods
-
-- (NSIndexPath *)tableView:(UITableView *)tableView
-  willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        return nil;
-    } else {
-        return indexPath;
-    }
-}
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,11 +152,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // 1. dismiss numpad if it's first responder
-    // 2. get everything in the cells
-    // 3. Update *self.incomeNeedsDict: {@"%s" : @%ul} %s = the cell title, and %ul is the $ value (if it's nil, put 0).
-    // 4. then the stuff below where you pass it on to incomeNeedsWantsDict
-    [self.tableView resignFirstResponder];
+    // Resign first responder
+    [self.view endEditing:YES];
+    
+    [self.financialDict setObject:self.needsDict forKey:@"needs"];
     
     UIViewController *destination = segue.destinationViewController;
     if ([destination respondsToSelector:@selector(setDelegate:)]) {

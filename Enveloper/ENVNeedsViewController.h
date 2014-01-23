@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ENVNeedsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ENVNeedsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
+// Properties for the table view!
 @property (strong, nonatomic) NSMutableDictionary *needsAndCategories;
 @property (strong, nonatomic) NSArray *needSectionTitles;
 @property (strong, nonatomic) NSMutableArray *needCellTitles;
-@property (copy, nonatomic) NSMutableDictionary *financialDict;
+
+// Properties for the model!
+@property (strong, nonatomic) NSMutableDictionary *financialDict;
+@property (strong, nonatomic) NSMutableDictionary *needsDict;
 
 @end
